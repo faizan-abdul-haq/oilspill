@@ -280,9 +280,9 @@ app.post('/detect', upload.array('images'), async (req, res) => {
 
 
 
-app.get('/login', (req, res) => {
-  res.send('Please log in to access your profile');
-});
+// app.get('/login', (req, res) => {
+//   res.send('Please log in to access your profile');
+// });
 
 app.get('/api/user-role', (req, res) => {
   if (req.user) {
