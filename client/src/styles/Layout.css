@@ -1,0 +1,42 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure full height for the page */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the layout spans the full viewport height */
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Ensure video is behind all content */
+}
+
+.main-content {
+  flex: 1; /* Take up all available space between Navbar and Footer */
+  display: flex; /* Flexbox for child components */
+  flex-direction: column; /* Allow vertical alignment of children */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  position: relative;
+  z-index: 1; /* Ensure it stays above the video */
+}
+
+.footer {
+  background-color: #333; /* Footer background matches theme */
+  color: white; /* Footer text color */
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  margin-top: auto; /* Push footer to the bottom when content is short */
+  z-index: 1; /* Above the background video */
+}

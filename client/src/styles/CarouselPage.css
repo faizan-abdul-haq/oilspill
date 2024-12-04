@@ -1,0 +1,56 @@
+/* Carousel container styling */
+.carousel-container {
+  width: 100%; /* Full width */
+  max-width: 100%; /* Ensure it matches the container */
+  margin: 0 auto; /* Center the container */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in width calculation */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Carousel styling */
+.carousel {
+  width: 100%; /* Full width of the container */
+  max-width: 100%; /* No additional constraints */
+}
+
+.carousel-item {
+  position: relative;
+  overflow: hidden;
+  width: 100%; /* Full width of the carousel */
+  height:1000px; /* Increased height */
+}
+
+.carousel-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: fit-content; /* Full width */
+  height: fit-content; /* Full height */
+  object-fit: cover; /* Maintain aspect ratio and cover area */
+}
+
+/* Carousel caption styling */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.6); /* Dark background for captions */
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.carousel-caption h3,
+.carousel-caption p {
+  color: #fff; /* White text for captions */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 400px; /* Adjusted height for smaller screens */
+  }
+
+  .carousel-container {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+}

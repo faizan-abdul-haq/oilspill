@@ -1,0 +1,160 @@
+/* Navbar */
+.NavBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5vw 5vw; /* Dynamic padding for better scaling */
+  background-color: #1f1f1f; /* Sleek dark background */
+  color: #f5f5f5; /* Soft white text */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Modern shadow effect */
+  font-family: "Poppins", sans-serif; /* Modern font */
+  font-size: 18px; /* Larger, more readable base font size */
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Navbar Links */
+.LinkNav {
+  text-decoration: none;
+  color: #f5f5f5;
+  margin: 0.5vw 1.5vw; /* Dynamic margin */
+  font-size: clamp(1rem, 1.2vw, 1.4rem); /* Scales nicely between 16px and 22px */
+  font-weight: 500; /* Medium weight for modern look */
+  padding: 0.6vw 1vw; /* Dynamic padding */
+  border-radius: 8px; /* Slightly rounded corners */
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.LinkNav:hover {
+  background-color: #ff5252; /* Modern accent color */
+  color: #ffffff;
+}
+
+/* Link Buttons */
+.LinkButton {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: clamp(1rem, 1.5vw, 1.6rem); /* Larger font size for prominence */
+  padding: 0.8vw 1.5vw; /* Dynamic padding for better spacing */
+  background-color: #ff5252;
+  border-radius: 10px; /* Modern rounded buttons */
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+.LinkButton:hover {
+  background-color: #e03d3d; /* Slightly darker hover state */
+  transform: translateY(-3px); /* Adds a lifting hover effect */
+}
+
+/* Buttons container */
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.2vw; /* Larger, dynamic spacing */
+}
+
+/* Navbar buttons */
+.NavBar button {
+  background-color: #ff5252;
+  color: #ffffff;
+  padding: 0.8vw 1.5vw; /* Dynamic padding */
+  border: none;
+  border-radius: 30px; /* Smooth rounded corners */
+  cursor: pointer;
+  font-size: clamp(1rem, 1.3vw, 1.5rem); /* Modern scalable font */
+  font-weight: 600; /* Bold and modern */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.NavBar button:hover {
+  background-color: #e03d3d;
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Join us button styling */
+.joinus {
+  background-color: #ffffff;
+  color: #ff5252;
+  border: 2px solid #ff5252;
+}
+
+.joinus:hover {
+  background-color: #ff5252;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+
+/* For screens smaller than 768px (tablets and small devices) */
+@media (max-width: 768px) {
+  .NavBar {
+    padding: 15px 4%;
+    flex-direction: column;
+    gap: 1.2rem; /* Space between stacked elements */
+  }
+
+  .LinkNav {
+    margin: 10px 0;
+    font-size: 1rem; /* Ensure readability on smaller devices */
+  }
+
+  .LinkButton {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+
+  .NavBar button {
+    padding: 10px 16px;
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* For screens smaller than 480px (mobile devices) */
+@media (max-width: 480px) {
+  .NavBar {
+    padding: 10px 3%;
+  }
+
+  .LinkNav {
+    font-size: 0.9rem; /* Smaller font for compact space */
+  }
+
+  .LinkButton {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+
+  .NavBar button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+/* For larger screens (over 1400px) */
+@media (min-width: 1400px) {
+  .NavBar {
+    padding: 2vw 10vw; /* Spacious padding for wide screens */
+  }
+
+  .LinkNav {
+    font-size: 1.6rem; /* Enhance font size for readability */
+  }
+
+  .LinkButton {
+    font-size: 1.6rem;
+    padding: 1vw 2vw;
+  }
+
+  .NavBar button {
+    padding: 1vw 2vw;
+    font-size: 1.5rem;
+  }
+}

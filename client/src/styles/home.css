@@ -1,0 +1,154 @@
+.home-page {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  width: 100%;
+  height:100%;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333; /* Dark background for hero */
+  color: #ffffff;
+  text-align: center;
+  padding: 60px 10%;
+}
+
+.hero-content h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.hero-button {
+  padding: 12px 24px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: background-color 0.3s;
+}
+
+.hero-button.primary {
+  background-color: #ff5252;
+}
+
+.hero-button.secondary {
+  background-color: #ffffff;
+  color: #ff5252;
+  border: 2px solid #ff5252;
+}
+
+.hero-button:hover {
+  background-color: #ff4040;
+}
+
+/* Carousel Section */
+.carousel-section {
+  padding: 40px 0;
+}
+
+/* Features Section */
+.features {
+  padding: 50px 10%;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2.5em;
+  margin-bottom: 1em;
+  color: #333;
+}
+
+.features-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  text-align: center;
+}
+
+.feature-card h3 {
+  color: #ff5252;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Call to Action Section */
+.cta {
+  padding: 50px 10%;
+  background-color: #ff5252;
+  color: white;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.cta p {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+}
+
+.cta-button {
+  padding: 12px 30px;
+  color: #ff5252;
+  background-color: #ffffff;
+  font-size: 1em;
+  font-weight: bold;
+  border: 2px solid #ffffff;
+  border-radius: 30px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  color: #ffffff;
+  background-color: #ff4040;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5em;
+  }
+
+  .features-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2em;
+  }
+
+  .hero-button {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,90 @@
+/* Signup Container */
+.SignUp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: max-content;
+}
+
+/* Signup Form (Iframe Style) */
+.SignUp-form {
+  width: 600px; /* Increase width to make the form wider */
+  padding: 30px; /* Padding for spacing */
+  background-color:   #333; /* Light background for the form */
+  border: 1px solid #ccc; /* Light border to mimic iframe */
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+  position: relative; /* Required for the iframe effect */
+}
+
+/* Input Fields */
+.SignUp-input {
+  width: 100%;
+  margin-bottom: 15px; /* Margin between inputs */
+  padding: 10px;
+  font-size: 16px; /* Font size */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #fff; /* White background for inputs */
+  color: #333; /* Dark text for readability */
+}
+
+/* Focus State for Input Fields */
+.SignUp-input:focus {
+  outline: none;
+  border-color: #ff5252; /* Highlight border color on focus */
+}
+
+/* Button Container */
+.Button-div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px; /* Margin above buttons */
+}
+.signupLabel {
+  color: #ff5252; /* Text color */
+  padding: 5px; /* Padding around the text */
+  font-size: 16px; /* Font size for better readability */
+  font-weight: 600; /* Bold text for emphasis */
+  margin-bottom: 8px; /* Space below the label */
+  display: block; /* Ensures each label is on its own line */
+  text-transform: uppercase; /* Uppercase for a modern look */
+  letter-spacing: 0.5px; /* Slightly increased letter spacing for readability */
+  transition: color 0.3s; /* Transition for color change on hover */
+}
+
+/* Optional hover effect */
+.signupLabel:hover {
+  color: #e03e3e; /* Slightly darker color on hover for interaction feedback */
+}
+
+
+/* Buttons */
+.Button-div button {
+  padding: 12px 24px; /* Button padding */
+  font-size: 16px; /* Button font size */
+  background-color: #ff5252; /* Match the navbar button color */
+  color: white;
+  border: none;
+  border-radius: 30px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+}
+
+/* Button Hover State */
+.Button-div button:hover {
+  background-color: #ff4040; /* Darker shade on hover */
+  transform: scale(1.05); /* Slight scale effect */
+}
+
+/* Login Link */
+.login-link {
+  text-decoration: none;
+  color: #ff5252; /* Match button color */
+  font-weight: bold;
+}
+
+.login-link:hover {
+  color: #ff4040; /* Darker color on hover */
+}

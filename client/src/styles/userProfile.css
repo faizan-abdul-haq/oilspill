@@ -1,0 +1,156 @@
+/* Profile Container */
+.profile-container {
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 1400px; /* Allows growth on larger screens */
+  margin: 40px auto;
+  padding: 5vw; /* Relative padding for scaling */
+  border-radius: 20px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1); /* Softer, modern shadow */
+  display: flex;
+  flex-direction: column;
+  gap: 3.5vw; /* Relative spacing */
+  transition: padding 0.3s, gap 0.3s; /* Smooth scaling */
+  font-family: "Poppins", sans-serif; /* Modern font */
+}
+
+/* Profile Header */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 3.5vw; /* Scales with screen size */
+  justify-content: center;
+  text-align: center;
+}
+
+.profile-header .profile-picture {
+  width: 16vw; /* Relative to viewport width */
+  height: 16vw; /* Keeps it square */
+  max-width: 250px; /* Cap size on larger screens */
+  max-height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ff5252; /* Slightly thicker border */
+}
+
+.profile-info {
+  flex: 1;
+  text-align: left; /* Aligns text for a modern layout */
+}
+
+.profile-info h1 {
+  font-size: clamp(2.2rem, 2.8vw, 3.5rem); /* Larger and flexible */
+  font-weight: 700;
+  color: #333; /* Modern, neutral tone */
+  margin-bottom: 10px;
+}
+
+.profile-info p {
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem); /* Larger for better readability */
+  color: #555; /* Subtle contrast */
+  margin: 5px 0;
+}
+
+.profile-info input[type="file"] {
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+/* User Info Section */
+.user-info {
+  background-color: #ff5252;
+  padding: 4vw; /* Scales padding with screen size */
+  border-radius: 20px;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.user-info h2 {
+  font-size: clamp(1.8rem, 2.5vw, 3rem); /* Larger, bold section title */
+  margin-bottom: 2vw;
+  font-weight: 700;
+}
+
+.user-info p {
+  font-size: clamp(1.2rem, 1.6vw, 1.4rem); /* Clear and modern */
+  margin: 12px 0;
+}
+
+.user-info strong {
+  font-weight: 600;
+}
+
+/* Change Picture Button */
+.change-picture-btn {
+  background-color: #ff5252;
+  color: white;
+  padding: 1vw 3vw; /* Adjusts padding dynamically */
+  border-radius: 10px; /* Smoother, modern button corners */
+  font-size: clamp(1.2rem, 1.6vw, 1.4rem); /* Larger button text */
+  cursor: pointer;
+  border: none;
+  margin-top: 15px;
+  display: block;
+  margin: 15px auto;
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.change-picture-btn:hover {
+  background-color: #e03d3d;
+  transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+/* Responsive Design */
+
+/* For screens smaller than 768px (tablets and smaller devices) */
+@media (max-width: 768px) {
+  .profile-container {
+    width: 95%;
+    padding: 25px;
+    gap: 25px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .profile-info h1 {
+    font-size: 1.8rem; /* Maintain readability */
+  }
+
+  .user-info h2 {
+    font-size: 1.6rem;
+  }
+
+  .profile-info p,
+  .user-info p {
+    font-size: 1rem; /* Scales down gracefully */
+  }
+
+  .change-picture-btn {
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
+}
+
+/* For ultra-wide screens (larger than 1400px) */
+@media (min-width: 1400px) {
+  .profile-container {
+    max-width: 1600px;
+    padding: 6vw;
+  }
+
+  .profile-header .profile-picture {
+    width: 14vw;
+    height: 14vw;
+  }
+
+  .profile-info h1 {
+    font-size: 4rem;
+  }
+
+  .user-info {
+    padding: 5vw;
+  }
+}

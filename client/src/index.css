@@ -1,0 +1,13 @@
+/* Reset margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+  }
+  
+  /* Reset margin and padding for html and body */
+  html, body {
+    height: 100%; /* Ensures the body takes full height */
+    overflow-x: hidden; /* Prevents horizontal scroll */
+  }
+  

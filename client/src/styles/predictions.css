@@ -1,0 +1,70 @@
+/* Predictions container */
+.predictions-container {
+    background-color: #333; /* Dark theme */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Header styling */
+  .predictions-header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ff5252; /* Accent color for theme */
+  }
+  
+  /* Table styling */
+  .predictions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #444;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table header */
+  .predictions-header-row {
+    background-color: #555;
+    color: #ff5252;
+  }
+  
+  .predictions-header-cell {
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  /* Table rows */
+  .predictions-row:nth-child(even) {
+    background-color: #4a4a4a;
+  }
+  
+  .predictions-row:nth-child(odd) {
+    background-color: #3b3b3b;
+  }
+  
+  .predictions-cell {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  /* Image styling */
+  .prediction-image {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Loading and error messages */
+  .loading-message,
+  .error-message {
+    text-align: center;
+    font-size: 18px;
+    margin: 20px 0;
+    color: #ff5252;
+  }
+  
