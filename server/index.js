@@ -26,23 +26,14 @@ const app = express();
 // }));
 
  const __filename = fileURLToPath(import.meta.url);
-// app.use(express.static("..","./client/build"))
  const __dirname = path.dirname(__filename);
 
-// app.get("*",(req,res)=>{
-//   res.sendFile(path.resolve(__dirname,"..","client","build", "index.html"))
-// })
-
-// const buildPath = path.join(__dirname, '..', 'client', 'build');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-// Catch-all route to serve index.html for React app
-// app.get("*", (req, res) => {
-//   res.sendFile(path.resolve(buildPath, "index.html"));
-// });
+
 env.config(); // Load environment variables from .env file
 const port = 5000; // app port
 const saltRounds = 10; // salt rounds for hashing 
@@ -62,13 +53,6 @@ app.use(session({
 
 app.use(passport.initialize()); // initialize passport
 app.use(passport.session());
-
-// throw 404 if URL not found
-app.all("*", function(req, res) {
-	//return apiResponse.notFoundResponse(res, "Page not found");
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
 
 // initializing DB
 const db = new pg.Client({
@@ -570,7 +554,11 @@ passport.use(
        cb(null,user);
      });
      
-    
+  // Catch-all route to serve index.html for React app
+app.all("*", function(req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
    
