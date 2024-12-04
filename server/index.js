@@ -34,6 +34,9 @@ const app = express();
 // })
 
 // const buildPath = path.join(__dirname, '..', 'client', 'build');
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Catch-all route to serve index.html for React app
