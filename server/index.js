@@ -28,12 +28,13 @@ const app = express();
  const __filename = fileURLToPath(import.meta.url);
 // app.use(express.static("..","./client/build"))
  const __dirname = path.dirname(__filename);
+
 // app.get("*",(req,res)=>{
 //   res.sendFile(path.resolve(__dirname,"..","client","build", "index.html"))
 // })
 
 // const buildPath = path.join(__dirname, '..', 'client', 'build');
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Catch-all route to serve index.html for React app
 // app.get("*", (req, res) => {
