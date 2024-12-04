@@ -60,6 +60,13 @@ app.use(session({
 app.use(passport.initialize()); // initialize passport
 app.use(passport.session());
 
+// throw 404 if URL not found
+app.all("*", function(req, res) {
+	//return apiResponse.notFoundResponse(res, "Page not found");
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+
 // initializing DB
 const db = new pg.Client({
     user: process.env.PG_USER,
@@ -69,51 +76,6 @@ const db = new pg.Client({
     port: process.env.PG_PORT,
 });
 db.connect(); // connect to PostgreSQL
-
-app.post('/createClientTable', async (req, res) => {
-  const createTableQuery = `
-    CREATE TABLE IF NOT EXISTS clients (
-      id SERIAL PRIMARY KEY,
-      email VARCHAR(255) UNIQUE NOT NULL,
-      password VARCHAR(255) NOT NULL,
-      fname VARCHAR(100),
-      lname VARCHAR(100),
-      country VARCHAR(100),
-      city VARCHAR(100),
-      phone VARCHAR(20),
-      gender VARCHAR(10),
-      organization VARCHAR(255)
-    );
-  `;
-
-  try {
-    await db.query(createTableQuery);
-    res.status(200).send('Table created successfully');
-  } catch (err) {
-    console.error('Error creating table:', err);
-    res.status(500).send('Error creating table');
-  }
-});
-
-// API endpoint to insert data into the table
-app.post('/insertClient', async (req, res) => {
-  const { email, password, fname, lname, country, city, phone, gender, organization } = req.body;
-
-  // Insert query
-  const insertQuery = `
-    INSERT INTO clients (email, password, fname, lname, country, city, phone, gender, organization)
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
-    RETURNING *;
-  `;
-
-  try {
-    const result = await pool.query(insertQuery, [email, password, fname, lname, country, city, phone, gender, organization]);
-    res.status(200).json(result.rows[0]);  // Return the inserted row
-  } catch (err) {
-    console.error('Error inserting data:', err);
-    res.status(500).send('Error inserting data');
-  }
-});
 
 // Fetch all users (for display in the ManageUsers component)
 app.get('/api/users', async (req, res) => {
