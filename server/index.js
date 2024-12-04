@@ -48,6 +48,9 @@ app.use(session({
     saveUninitialized: true, // store uninitialized session to the server memory
     cookie: {
       maxAge: 1000*60 *60, // this is fo rthe seasion's time ( its in milliseconds)
+      // httpOnly: true,
+      // secure: false,
+      // sameSite: 'None',  // Allow cross-origin cookie
     }
 }));
 
@@ -160,7 +163,7 @@ if (!fs.existsSync(tempDir)) {
 
 const upload = multer({ storage: multer.memoryStorage() }); // In-memory storage to send as buffer
 
-app.post('/detect', upload.array('images'), async (req, res) => {
+app.post('/api/detect', upload.array('images'), async (req, res) => {
   console.log('Received files:', req.files);
 
   if (!req.files || req.files.length === 0) {
@@ -195,10 +198,12 @@ app.post('/detect', upload.array('images'), async (req, res) => {
       results: processedResults,
     };
 
+    console.log('Authenticated:', req.isAuthenticated());
+
     if (req.isAuthenticated()) {
       // Save prediction results for logged-in users
       const user = req.user;
-      console.log(user.id.toString(),'xxx');
+      console.log(user,'xxx');
       const userDir = path.join('public/images', user.id.toString());
       const uploadedDir = path.join(userDir, 'uploaded_images');
       const masksDir = path.join(userDir, 'generated_masks');
@@ -283,7 +288,7 @@ app.use('/static', express.static(path.join(__dirname, 'client/public/images')))
 
 
 // Backend endpoint to get past predictions for the logged-in user
-app.get('/predictions', async (req, res) => {
+app.get('/api/predictions', async (req, res) => {
   if (!req.isAuthenticated()) {
     return res.status(401).json({ error: 'You must be logged in to view predictions' });
   }
