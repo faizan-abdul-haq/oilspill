@@ -196,9 +196,10 @@ app.post('/detect', upload.array('images'), async (req, res) => {
     };
 
     if (req.isAuthenticated()) {
+      console.log(user.id.toString(),'xxx');
       // Save prediction results for logged-in users
       const user = req.user;
-      const userDir = path.join('../client/public/images', user.id.toString());
+      const userDir = path.join('public/images', user.id.toString());
       const uploadedDir = path.join(userDir, 'uploaded_images');
       const masksDir = path.join(userDir, 'generated_masks');
 
