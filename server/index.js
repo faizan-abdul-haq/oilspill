@@ -410,7 +410,7 @@ app.post("/login", (req, res, next) => {
 
 
 passport.authenticate("local", {
-  successRedirect:"http://localhost:3000/profile?loggedIn=true",
+  successRedirect:"http://88.99.241.139:5000/profile?loggedIn=true",
   failureRedirect: "/login",
 });
 
