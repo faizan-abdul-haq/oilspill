@@ -13,7 +13,7 @@ import multer from 'multer';
 import path from 'path'; // for path
 import fs from 'fs';
 import FormData from 'form-data'
-
+var cookieParser = require("cookie-parser");
 
 // import * as tf from '@tensorflow/tfjs-node';
 // import { decodeJpeg } from '@tensorflow/tfjs-node'; // To decode JPEG images
