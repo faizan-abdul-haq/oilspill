@@ -284,7 +284,7 @@ app.get('/api/user-role', (req, res) => {
 });
 
 
-app.use('/static', express.static(path.join(__dirname, 'client/public/images')));
+app.use('/static', express.static(path.join(__dirname, 'public/images')));
 
 
 // Backend endpoint to get past predictions for the logged-in user
@@ -307,7 +307,7 @@ app.get('/api/predictions', async (req, res) => {
       [user.id]
     );
 
-    console.log("result of query: ", result);
+    console.log("result of query: ", result.rows);
 
     // If no predictions are found, send an empty array
     if (result.rows.length === 0) {
@@ -316,9 +316,9 @@ app.get('/api/predictions', async (req, res) => {
      
     // Map the database results to include only the filename from the image and mask path
     const predictions = result.rows.map((row) => ({
-      imagePath: `/images/${user.id}/uploaded_images/${row.image_path.split("\\").pop()}`,
+      imagePath: `public/images/${user.id}/uploaded_images/${row.image_path.split("\\").pop()}`,
       result: row.result,
-      maskPath: `/images/${user.id}/generated_masks/${row.mask_path.split("\\").pop()}`,
+      maskPath: `public/images/${user.id}/generated_masks/${row.mask_path.split("\\").pop()}`,
       predictionDate: row.prediction_date,
       pixels_with_oil_spills: row.pixels_with_oil_spills
 
