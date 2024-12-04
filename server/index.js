@@ -378,7 +378,7 @@ console.log("failure in loggin in")
 app.get(
   "/auth/google/oilSpill",
   passport.authenticate("google", {
-    successRedirect: "http://88.99.241.139:5000//profile?loggedIn=true",
+    successRedirect: "http://88.99.241.139:5000/profile?loggedIn=true",
     failureRedirect: "/fail",
   })
 );
