@@ -138,7 +138,7 @@ app.get('/about', (req, res) => {
 
 
 
-app.get('/profile', (req, res) => {
+app.get('/api/profile', (req, res) => {
   if (req.isAuthenticated()) {
     const user = req.user;
     res.json({
